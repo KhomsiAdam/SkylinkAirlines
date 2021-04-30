@@ -1,0 +1,31 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+#admin-index {
+  background-image: url(../images/admin_index_bg.jpg);
+  height: 100vh;
+}
+#user-index, #user-signup {
+  background-image: url(../images/index_bg.jpg);
+  height: 100vh;
+}
+.navbar-nav > li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (min-width: 992px) {
+  #admin-index {
+    margin-top: -58.59px;
+  }
+  #user-index, #user-signup {
+    margin-top: -58.59px;
+  }
+}
+
+#flight-return,
+#edit-flight-return,
+#hidden_departure_time,
+#hidden_departure_time_2,
+#hidden_return_time {
+  display: none;
+}

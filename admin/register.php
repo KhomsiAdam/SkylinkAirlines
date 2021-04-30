@@ -1,5 +1,6 @@
 <?php
-/* include 'C:/xampp/htdocs/Skylink_Airlines/includes/autoloader.inc.php';
+require '../app/core/adminautoloader.php';
+/* 
 $host = "localhost";
 $user = "root";
 $pwd = "";
@@ -15,5 +16,5 @@ $admin_password = password_hash('admin123**', PASSWORD_BCRYPT);
 $sql = "INSERT INTO admins (admin_name, admin_password)
 VALUES ('$admin_name', '$admin_password')";
 $conn->query($sql); */
-header("Location: index.php");
+header("Location: index");
 ?>

@@ -1,11 +1,6 @@
 <?php
-include 'C:/xampp/htdocs/Skylink_Airlines/includes/autoloader.inc.php';
-$users_id = $_POST['users_id'];
-$flight_id = $_POST['flight_id'];
-$reserv_status = $_POST['reserv_status'];
+require 'app/core/autoloader.php';
 
 $reserv_obj = new ReservController();
-$reserv_obj->createReserv($users_id, $flight_id, $reserv_status);
-
-header("Location: dashboard.php");
+$reserv_obj->createReserv($users_id, $flight_id, $flight_type, $flight_origin, $flight_destination, $flight_departure_time, $flight_return_time, $reserv_status);
 ?>

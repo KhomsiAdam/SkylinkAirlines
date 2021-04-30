@@ -1,8 +1,8 @@
 <?php
-include 'C:/xampp/htdocs/Skylink_Airlines/includes/autoloader.inc.php';
+require '../app/core/adminautoloader.php';
 
 $register_obj = new FlightController();
 $register_obj->deleteFlights($flight_id);
 
-header("Location: dashboard.php");
+header("Location: flights");
 ?>
