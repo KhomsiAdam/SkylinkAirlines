@@ -68,20 +68,20 @@ function confirmEdit(flight) {
     document.getElementById('edit_flight_id').value=flight.children[1].innerHTML;
 
     edit_flight_type.value=flight.children[0].children[0].children[0].children[0].children[0].innerHTML;
-    if (edit_flight_type.value == 'Round Trip') {
-        edit_flight_return.style.display = "block";
-    } else {
-        edit_flight_return.style.display = "none";
-    }
 
     edit_flight_origin.value=flight.children[0].children[0].children[0].children[1].children[0].children[0].innerHTML;
     edit_flight_destination.value=flight.children[0].children[0].children[0].children[2].children[0].children[0].innerHTML;
     
-    edit_flight_departure_time.value=flight.children[0].children[0].children[0].children[4].innerHTML;
-    edit_flight_return_time.value=flight.children[0].children[0].children[0].children[6].innerHTML;
-
-    edit_flight_price.value=flight.children[5].innerHTML;
+    edit_flight_price.value=flight.children[3].innerHTML;
     edit_flight_seats.value=flight.children[2].innerHTML;
+
+    edit_flight_departure_time.value=flight.children[0].children[0].children[0].children[4].innerHTML;
+    if (edit_flight_type.value == 'Round Trip') {
+        edit_flight_return.style.display = "block";
+        edit_flight_return_time.value=flight.children[0].children[0].children[0].children[6].innerHTML;    
+    } else {
+        edit_flight_return.style.display = "none";
+    }
 }
 
 var create_flight_form = document.getElementById('create-flight-form');

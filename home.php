@@ -42,6 +42,7 @@ if (isset($_SESSION['users_id']) && isset($_SESSION['users_email'])) {
                         <li class="nav-item dropdown justify-content-end">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle"></i>
+                            <?php echo $_SESSION['users_firstname'] . ' ' . $_SESSION['users_lastname']?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="logout">Logout</a></li>

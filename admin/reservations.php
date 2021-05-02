@@ -62,8 +62,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_name'])) {
         </nav>
         <section>
             <?php
-            $flights = new ReservView();
-            $flights->showReservations();
+            $reservs = new ReservView();
+            $reservs->showReservations();
+            //$reserv_id = 2;
+            $passengers = new PassengerView();
+            $passengers->showPassengers();
             ?>
         </section>
         <footer>

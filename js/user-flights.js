@@ -18,6 +18,7 @@ var flight_origin = document.getElementById('flight_origin');
 var flight_destination = document.getElementById('flight_destination');
 var flight_departure_time = document.getElementById('flight_departure_time');
 var flight_return_time = document.getElementById('flight_return_time');
+var reserv_flight_seats = document.getElementById('reserv_flight_seats');
 
 function confirmReserve(reserv) {
     reserv_flight_id.value=reserv.children[1].innerHTML;
@@ -31,4 +32,5 @@ function confirmReserve(reserv) {
     } else {
         flight_return_time.value = '';
     }
+    reserv_flight_seats.value = reserv.children[2].innerHTML;
 }

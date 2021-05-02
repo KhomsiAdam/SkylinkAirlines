@@ -41,6 +41,7 @@ if (isset($_SESSION['users_id']) && isset($_SESSION['users_email'])) {
                         <li class="nav-item dropdown justify-content-end">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle"></i>
+                            <?php echo $_SESSION['users_firstname'] . ' ' . $_SESSION['users_lastname']?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="logout">Logout</a></li>
@@ -78,6 +79,7 @@ if (isset($_SESSION['users_id']) && isset($_SESSION['users_email'])) {
                                 <input type="text" id="flight_destination" name="flight_destination" readonly>
                                 <input type="text" id="flight_departure_time" name="flight_departure_time" readonly>
                                 <input type="text" id="flight_return_time" name="flight_return_time" readonly>
+                                <input type="text" id="reserv_flight_seats" name="reserv_flight_seats" readonly>
                                 <input type="text" id="reserv_status" name="reserv_status" readonly value="Confirmed">
                             </form>
                             Are you sure you wanna book this flight ?
