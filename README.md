@@ -7,18 +7,24 @@ The application needs to have a back-office to manage the flights and also a fro
 #  Contraintes technologiques / Technological constraints :
 
 L'application doit être programmée en PHP avec les principes de programmation orientée objet.
-The application must be programmed with PHP with the principles of oriented object programming.
 
 L'application doit respecter l'architecture MVC (Model-View-Controller).
-The app must respect the MVC architecture (Model-View-Controller).
 
 L'utilisation de Bootstrap...
-The use of Bootstrap...
 
 Utilisation du Sass pour adapter Bootstrap.
-Using Sass to adapt Bootstrap.
 
 Utilisation de JS pour faire le formulaire dynamique.
+
+
+The application must be programmed with PHP with the principles of oriented object programming.
+
+The app must respect the MVC architecture (Model-View-Controller).
+
+The use of Bootstrap...
+
+Using Sass to adapt Bootstrap.
+
 Using JS to make the form dynamic.
 
 # Skylink_Airlines
@@ -27,4 +33,4 @@ Using JS to make the form dynamic.
 
 <img width="310" alt="UML-Use Case Diagram_Store Inventory Management (small)" src="https://user-images.githubusercontent.com/9354045/116001927-a5f09280-a5e6-11eb-9c10-651419b85523.png">
 
-<img width="330" alt="UML-Class Diagram_Store Inventory Management (small)" src="https://user-images.githubusercontent.com/9354045/116832220-5d674500-aba3-11eb-988a-91c1333174c6.png)">
+<img width="330" alt="UML-Class Diagram_Store Inventory Management (small)" src="https://user-images.githubusercontent.com/9354045/116832220-5d674500-aba3-11eb-988a-91c1333174c6.png">
