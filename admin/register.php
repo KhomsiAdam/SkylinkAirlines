@@ -1,5 +1,6 @@
 <?php
 require '../app/core/adminautoloader.php';
+// * Uncomment below to register an admin in case admin account or table gets deleted from database
 /* 
 $host = "localhost";
 $user = "root";

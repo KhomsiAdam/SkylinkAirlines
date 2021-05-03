@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 04:59 PM
+-- Generation Time: May 03, 2021 at 12:17 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -38,7 +38,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_password`) VALUES
-(1, 'admin', '$2y$10$oAh.Qst.HfbqlqHup0p62e2SbzJzpFEDUdwIMI.o5xzdBTtqDlThO');
+(1, 'admin', '$2y$10$YjaGu0Ss7UNTuEoGLNgqK.QyUKhQHAVaEoA.QQRUP8cHlkuVOQdKa');
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,25 @@ CREATE TABLE `flights` (
   `flight_departure_time` datetime NOT NULL,
   `flight_return_time` datetime DEFAULT NULL,
   `flight_price` int(11) NOT NULL,
-  `flight_seats` int(11) NOT NULL
+  `flight_seats` int(11) NOT NULL,
+  `flight_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `flight_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `passengers`
+--
+
+CREATE TABLE `passengers` (
+  `passengers_id` int(11) NOT NULL,
+  `reserv_id` int(11) NOT NULL,
+  `passengers_firstname` varchar(128) NOT NULL,
+  `passengers_lastname` varchar(128) NOT NULL,
+  `passengers_dateofbirth` date NOT NULL,
+  `passengers_country` varchar(128) NOT NULL,
+  `passengers_created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,7 +85,14 @@ CREATE TABLE `reservations` (
   `reserv_id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
   `flight_id` int(11) NOT NULL,
-  `reserv_status` varchar(128) NOT NULL
+  `reserv_type` varchar(128) NOT NULL,
+  `reserv_origin` varchar(128) NOT NULL,
+  `reserv_destination` varchar(128) NOT NULL,
+  `reserv_departure_time` datetime NOT NULL,
+  `reserv_status` varchar(128) NOT NULL,
+  `reserv_seats` int(11) NOT NULL,
+  `reserv_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `reserv_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -83,7 +108,8 @@ CREATE TABLE `users` (
   `users_email` varchar(128) NOT NULL,
   `users_password` varchar(128) NOT NULL,
   `users_dateofbirth` date NOT NULL,
-  `users_country` varchar(128) NOT NULL
+  `users_country` varchar(128) NOT NULL,
+  `users_created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -101,6 +127,13 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `flights`
   ADD PRIMARY KEY (`flight_id`);
+
+--
+-- Indexes for table `passengers`
+--
+ALTER TABLE `passengers`
+  ADD PRIMARY KEY (`passengers_id`),
+  ADD KEY `reserv_id` (`reserv_id`);
 
 --
 -- Indexes for table `reservations`
@@ -134,6 +167,12 @@ ALTER TABLE `flights`
   MODIFY `flight_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `passengers`
+--
+ALTER TABLE `passengers`
+  MODIFY `passengers_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
@@ -148,6 +187,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `passengers`
+--
+ALTER TABLE `passengers`
+  ADD CONSTRAINT `passengers_ibfk_1` FOREIGN KEY (`reserv_id`) REFERENCES `reservations` (`reserv_id`);
 
 --
 -- Constraints for table `reservations`

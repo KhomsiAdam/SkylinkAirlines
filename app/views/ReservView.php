@@ -154,11 +154,11 @@ class ReservView extends ReservModel
                 echo "<td class='text-center d-grid gap-2 col-6 mx-auto'>";
                     if ($_SESSION['reserv_status'] == 'Confirmed') {
                         echo "<button class='btn btn-outline-success btn-sm reserv_passenger' type='button' data-bs-toggle='modal' data-bs-target='#reservPassengerModal'>Include Passengers <i class='fas fa-users'></i></button>";
-                        echo "<button class='btn btn-outline-primary btn-sm reserv_print' type='button' onclick='print()'>Print Ticket <i class='fas fa-print'></i></button>";
+                        echo "<button class='btn btn-outline-primary btn-sm reserv_print' type='button'>Print Ticket <i class='fas fa-print'></i></button>";
                         echo "<button class='btn btn-outline-danger btn-sm reserv_cancel' type='button' data-bs-toggle='modal' data-bs-target='#reservStatusModal'>Cancel Reservation <i class='fas fa-ban'></i></button>";                
                     } else {
                         echo "<button class='btn btn-outline-secondary btn-sm reserv_passenger disabled' type='button' data-bs-toggle='modal' data-bs-target='#reservPassengerModal'>Include Passengers <i class='fas fa-users'></i></button>";
-                        echo "<button class='btn btn-outline-secondary btn-sm reserv_print disabled' type='button' onclick='print()'>Print Ticket <i class='fas fa-print'></i></button>";
+                        echo "<button class='btn btn-outline-secondary btn-sm reserv_print disabled' type='button'>Print Ticket <i class='fas fa-print'></i></button>";
                         echo "<button class='btn btn-outline-secondary btn-sm reserv_cancel disabled' type='button' data-bs-toggle='modal' data-bs-target='#reservStatusModal'>Cancel Reservation <i class='fas fa-ban'></i></button>";                
                     }
                 echo "</td>";
@@ -193,7 +193,7 @@ class ReservView extends ReservModel
                     echo '</div>';
                     echo '<div class="modal-footer">';
                         echo '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>';
-                        echo '<button type="submit" form="passenger-form" class="btn btn-primary">Confirm</button>';
+                        echo '<button type="submit" form="passenger-form" class="btn btn-primary disabled" id="confirm_passengers">Confirm</button>';
                     echo '</div>';
                 echo '</div>';
             echo '</div>';

@@ -4,6 +4,7 @@ var create_flight_submit = document.getElementById('create-flight-submit');
 var flight_type = document.getElementById('flight-type');
 var flight_return = document.getElementById('flight-return');
 var flight_return_time = document.getElementById('flight-return-time');
+
 var flight_origin = document.getElementById('flight-origin');
 var flight_destination = document.getElementById('flight-destination');
 var flight_departure_time = document.getElementById('flight-departure-time');

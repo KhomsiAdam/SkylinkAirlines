@@ -5,13 +5,11 @@ require '../app/core/adminautoloader.php';
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skylink Airlines</title>
+    <?php
+    include "admin_head.php";
+    ?>
     <meta name="description" content="Login page for admin to sign in">
-    <link rel="stylesheet" href="../css/custom.css">
-    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="../js/admin-login.js" defer></script>
 </head>
 
 <body>
@@ -50,13 +48,9 @@ require '../app/core/adminautoloader.php';
             </div>
         </div>
     </div>
-    <footer>
-        <div class="text-center p-3">
-            © 2021 Copyright Skylink Airlines
-        </div>
-    </footer>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../js/admin-login.js"></script>
+    <?php
+    include "admin_footer.php";
+    ?>
 </body>
 
 </html>

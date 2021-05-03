@@ -121,16 +121,3 @@ edit_flight_submit.addEventListener('click', function(event) {
         edit_flight_form.submit();
     }
 })
-
-function Print() {
-    var docprint = window.open("about:blank", "_blank"); 
-    var oTable = document.getElementById("flight-list").rows.item(0);
-    docprint.document.open(); 
-    docprint.document.write('<html><head><title>' + document.title + '</title>'); 
-    docprint.document.write('</head><body><center>');
-    docprint.document.write(oTable.innerHTML);
-    docprint.document.write('</center></body></html>'); 
-    docprint.document.close(); 
-    docprint.print();
-    docprint.close();
-}

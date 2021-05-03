@@ -124,7 +124,11 @@ class ReservModel extends Dbh
     // Prepare the modification of a reservation in the reservations table
     protected function modReservSeats($reserv_id, $flight_passengers_seats)
     {
-        $flight_passengers_seats = $flight_passengers_seats + 1;
+        $sql = "SELECT reserv_seats FROM reservations WHERE reserv_id='$reserv_id'";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch();
+        
+        $flight_passengers_seats = $flight_passengers_seats + $result['reserv_seats'];
 
         $sql = "UPDATE reservations SET reserv_seats=:reserv_seats, reserv_updated_at=CURRENT_TIMESTAMP
         WHERE reserv_id = :reserv_id";

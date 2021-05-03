@@ -11458,6 +11458,22 @@ fieldset:disabled .btn {
   }
 }
 
+@media print {
+  html {
+    visibility: hidden;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+  }
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+}
+
 #admin-index {
   background-image: url(../images/admin_index_bg.jpg);
   height: 100vh;
@@ -11488,5 +11504,63 @@ fieldset:disabled .btn {
 #hidden_departure_time_2,
 #hidden_return_time {
   display: none;
+}
+
+.search_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.5rem 1fr;
+      grid-template-columns: 2.5rem 1fr;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search_container:focus-within i {
+  display: none;
+}
+
+.search_container:focus-within .search {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+
+.search_container:focus-within .search::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.search_container:focus-within .search:-ms-input-placeholder {
+  color: transparent;
+}
+
+.search_container:focus-within .search::-ms-input-placeholder {
+  color: transparent;
+}
+
+.search_container:focus-within .search::placeholder {
+  color: transparent;
+}
+
+.search_icon {
+  padding: 1rem;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  z-index: 2;
+}
+
+.search {
+  border: 0;
+  padding: 0.5rem;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  outline: none;
 }
 /*# sourceMappingURL=custom.css.map */

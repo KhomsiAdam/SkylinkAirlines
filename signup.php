@@ -5,13 +5,11 @@ require 'app/core/autoloader.php';
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skylink Airlines</title>
+    <?php
+    include "head.php";
+    ?>
     <meta name="description" content="Register page for users to sign up">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="js/user-register.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +21,7 @@ require 'app/core/autoloader.php';
                         <form class="bg-white rounded shadow-5-strong p-5" action="register" method="POST" id="register-form">
                             <div class="text-center">
                                 <img src="icons/form-logo.png" alt="" width="75%" height="75%" class="rounded">
-                            </div>    
+                            </div>
                             <div class="form-group form-outline mb-1">
                                 <label for="firstname" class="form-label">FirstName</label>
                                 <input type="text" name="firstname" id="firstname" class="form-control">
@@ -66,13 +64,9 @@ require 'app/core/autoloader.php';
             </div>
         </div>
     </div>
-    <footer>
-        <div class="text-center p-3">
-            © 2021 Copyright Skylink Airlines
-        </div>
-    </footer>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="js/user-register.js"></script>
+    <?php
+    include "footer.php";
+    ?>
 </body>
 
 </html>
