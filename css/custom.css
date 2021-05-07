@@ -11557,7 +11557,7 @@ body {
 #user-error,
 #admin-error {
   background-image: url(../images/plane_moon.jpg);
-  height: 99vh;
+  height: 98vh;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -11614,7 +11614,7 @@ body {
 #user-home,
 #admin-dashboard {
   background-image: url(../images/airplane_bg.jpg);
-  height: 99vh;
+  height: 98vh;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
