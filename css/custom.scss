@@ -52,6 +52,9 @@ body {
 #admin-index {
     background-image: url(../images/admin_index_bg.jpg);
     height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
     .btn-dark {
         color: $airblue;
         background-color: $airgray;
@@ -75,6 +78,9 @@ body {
 #user-signup {
     background-image: url(../images/index_bg.jpg);
     height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
     .btn-dark {
         color: $airblue;
         background-color: $airgray;
