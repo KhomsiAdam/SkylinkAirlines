@@ -1,6 +1,6 @@
 <?php
 class AdminController extends AdminModel {
-    // login admin into the app
+    // login admin into the platform
     public function loginAdmin() {
         function validateAdminLogin($data){
             $data = trim($data);

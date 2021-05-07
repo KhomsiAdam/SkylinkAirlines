@@ -41,8 +41,8 @@ CREATE TABLE reservations (
     reserv_seats INT NOT NULL,
     reserv_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     reserv_updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (users_id) REFERENCES users(users_id),
-    FOREIGN KEY (flight_id) REFERENCES flights(flight_id)
+    FOREIGN KEY (users_id) REFERENCES users(users_id) ON DELETE CASCADE,
+    FOREIGN KEY (flight_id) REFERENCES flights(flight_id) ON DELETE CASCADE
 );
 
 -- @block
@@ -54,5 +54,5 @@ CREATE TABLE passengers (
     passengers_dateofbirth DATE NOT NULL,
     passengers_country VARCHAR(128) NOT NULL,
     passengers_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (reserv_id) REFERENCES reservations(reserv_id)
+    FOREIGN KEY (reserv_id) REFERENCES reservations(reserv_id) ON DELETE CASCADE
 );

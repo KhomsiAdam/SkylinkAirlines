@@ -11,7 +11,6 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_name'])) {
         include "admin_head.php";
         ?>
         <meta name="description" content="Admin dashboard">
-        <script src="../js/admin-dashboard.js" defer></script>
     </head>
 
     <body>
@@ -19,8 +18,21 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_name'])) {
         include "admin_navbar.php";
         ?>
 
-        <div class="container">
-            <?php echo 'Welcome' . ' ' . $_SESSION['admin_name'] ?>
+        <div id="admin-dashboard" class="bg-image shadow-2-strong">
+            <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-xl-6 col-md-8">
+                            <h1>The <span>sky</span> is the limit</h1>
+                            <p>Welcome <?php echo $_SESSION['admin_name'] ?></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between col-md-4">
+                        <a href="flights"><button type="button" class="btn btn-dark btn-lg">Manage Flights</button></a>
+                        <a href="reservations"><button type="button" class="btn btn-dark btn-lg">Browse Bookings</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <?php

@@ -92,16 +92,6 @@ class ReservModel extends Dbh
         $sql = "SELECT * FROM reservations WHERE users_id='$users_id' AND flight_id=$flight_id";
         $stmt = $this->connect()->query($sql);
         $result = $stmt->fetch();
-        /* foreach ($results as $result) {
-            if ($users_id == $result['users_id'] && $flight_id == $result['flight_id'] ) { 
-                $sql = "UPDATE reservations SET reserv_status=:reserv_status, reserv_updated_at=CURRENT_TIMESTAMP
-                WHERE reserv_id = :reserv_id";
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->bindParam(':reserv_id', $reserv_id);
-                $stmt->bindParam(':reserv_status', $reserv_status);
-                $stmt->execute();
-            } 
-        } */
         $reserv_seats = 0;
         $sql = "UPDATE reservations SET reserv_status=:reserv_status, reserv_seats=:reserv_seats, reserv_updated_at=CURRENT_TIMESTAMP
         WHERE flight_id = :flight_id";
@@ -110,16 +100,6 @@ class ReservModel extends Dbh
         $stmt->bindParam(':reserv_status', $reserv_status);
         $stmt->bindParam(':reserv_seats', $reserv_seats);
         $stmt->execute();
-        /* for ($i = 0; $i < 2; $i++) {
-            if ($users_id == $result['users_id'] && $flight_id == $result['flight_id'] ) { 
-                $sql = "UPDATE reservations SET reserv_status=:reserv_status, reserv_updated_at=CURRENT_TIMESTAMP
-                WHERE reserv_id = :reserv_id + $i";
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->bindParam(':reserv_id', $reserv_id);
-                $stmt->bindParam(':reserv_status', $reserv_status);
-                $stmt->execute();
-            } 
-        } */
     }
     // Prepare the modification of a reservation in the reservations table
     protected function modReservSeats($reserv_id, $flight_passengers_seats)

@@ -1,14 +1,14 @@
 <script src="js/navbar.js" defer></script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="icons/logo.png" alt="" width="75%" height="75%" class="d-inline-block align-text-top">
+    <div class="container-fluid d-flex justify-content-center text-center">
+        <a class="navbar-brand col-md-2" href="home">
+            <img src="icons/logo_horizontal.png" alt="Skylink Airlines with text horizontally" width="75%" height="75%" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="home">Home</a>

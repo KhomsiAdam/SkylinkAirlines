@@ -1,4 +1,13 @@
-<!-- Add Flight Modal -->
+<head>
+    <link rel="stylesheet" href="../css/airports.css">
+    <script src="../js/airports.js" defer></script>
+    <script src="../js/admin-add-flights.js" defer></script>
+    <script src="https://unpkg.com/fuse.js@2.5.0/src/fuse.min.js"></script>
+    <script src="https://screenfeedcontent.blob.core.windows.net/html/airports.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -9,8 +18,8 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-xl-12 col-md-8">
-                            <form class="bg-white rounded shadow-5-strong p-5 needs-validation" action="createflight" method="POST" id="create-flight-form">
+                        <div class="col-md-12">
+                            <form class="rounded shadow-5-strong p-5 needs-validation" action="createflight" method="POST" id="create-flight-form">
 
                                 <div class="form-group form-outline mb-4">
                                     <label for="flight-type" class="form-label">Flight Type</label>
@@ -24,13 +33,13 @@
                                 </div>
 
                                 <div class="form-group form-outline mb-4">
-                                    <label for="flight-origin" class="form-label">Flight Origin</label>
-                                    <input type="text" name="flight-origin" id="flight-origin" class="form-control">
+                                    <label class="control-label form-label">Flight Origin</label>
+                                    <input id="autocomplete" class="autocomplete-airport form-control" type="text" name="flight-origin" autocomplete="off">
                                 </div>
 
                                 <div class="form-group form-outline mb-4">
-                                    <label for="flight-destination" class="form-label">Flight Destination</label>
-                                    <input type="text" name="flight-destination" id="flight-destination" class="form-control">
+                                    <label class="control-label form-label">Flight Destination</label>
+                                    <input id="autocomplete2" class="autocomplete-airport form-control" type="text" name="flight-destination" autocomplete="off">
                                 </div>
 
                                 <div class="form-group form-outline mb-4">
@@ -62,10 +71,10 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" form="create-flight-form" id="create-flight-submit" class="btn btn-primary">Confirm</button>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-secondary col-sm-5" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="create-flight-form" id="create-flight-submit" class="btn btn-outline-primary col-sm-5">Confirm</button>
             </div>
         </div>
     </div>
-</div> <!-- Add Flight Modal end -->
+</div>

@@ -1,6 +1,38 @@
+// Bootstrap SASS import
 @import "../node_modules/bootstrap/scss/bootstrap";
-@media print {
+// Font : Poppins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+// Color Variables
+$airbadbe9: #badbe9;
+$airblue: #2cc0ff;
+$airbluedk: #5496b3;
+$airgreen: #29ac34;
+$airred: #d14848;
+$airgray: #0b232d;
+$airgray075: #0b232dbb;
 
+body {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+// Custom Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $airbadbe9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $airbluedk;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $airgray075;
+}
+// For printing testing
+@media print {
     html {
         visibility: hidden;
         height: 100vh;
@@ -16,68 +48,396 @@
         visibility: visible;
     }
 }
+// Admin index/login page
 #admin-index {
-  background-image: url(../images/admin_index_bg.jpg);
-  height: 100vh;
+    background-image: url(../images/admin_index_bg.jpg);
+    height: 100vh;
+    .btn-dark {
+        color: $airblue;
+        background-color: $airgray;
+    }
+    .btn-dark:hover {
+        color: $white;
+        background-color: $airblue;
+        border-color: $airblue;
+    }
+    a {
+        color: $airbluedk;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $airblue;
+        text-decoration: underline;
+    }
 }
-#user-index, #user-signup {
-  background-image: url(../images/index_bg.jpg);
-  height: 100vh;
+// User index/login and register page
+#user-index,
+#user-signup {
+    background-image: url(../images/index_bg.jpg);
+    height: 100vh;
+    .btn-dark {
+        color: $airblue;
+        background-color: $airgray;
+    }
+    .btn-dark:hover {
+        color: $white;
+        background-color: $airblue;
+        border-color: $airblue;
+    }
+    a {
+        color: $airbluedk;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $airblue;
+        text-decoration: underline;
+    }
 }
-.navbar-nav > li {
-  padding-left: 30px;
-  padding-right: 30px;
+// Admin and User Error 404 page
+#user-error,
+#admin-error {
+    background-image: url(../images/plane_moon.jpg);
+    height: 99vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+        color: $airgray;
+        font-size: 3rem;
+        font-weight: 700;
+        span {
+            color: $airbadbe9;
+        }
+    }
+    .error {
+        color: $airgray;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    .moon {
+        color: $white;
+        font-size: 1em;
+    }
+    .browse,
+    .check {
+        color: $white;
+        font-size: 1.2em;
+    }
+    .btn-dark {
+        color: $airblue;
+        background-color: $airgray;
+    }
+    .btn-dark:hover {
+        color: $white;
+        background-color: $airblue;
+        border-color: $airblue;
+    }
 }
-
+// Landing page for User and Admin
+#user-home,
+#admin-dashboard {
+    background-image: url(../images/airplane_bg.jpg);
+    height: 99vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+        color: $airgray;
+        font-size: 4rem;
+        font-weight: 700;
+        span {
+            color: $airblue;
+        }
+    }
+    p {
+        color: $white;
+        font-size: 1.2em;
+    }
+    .btn-dark {
+        color: $airblue;
+        background-color: $airgray;
+    }
+    .btn-dark:hover {
+        color: $white;
+        background-color: $airblue;
+        border-color: $airblue;
+    }
+}
 @media (min-width: 992px) {
-  #admin-index {
-    margin-top: -58.59px;
-  }
-  #user-index, #user-signup {
-    margin-top: -58.59px;
-  }
+    #admin-index,
+    #user-index,
+    #user-signup,
+    #user-error,
+    #admin-error,
+    #user-home,
+    #admin-dashboard {
+        margin-top: -58.59px;
+    }
 }
-
+// Placeholder for input type "date"
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: $airgray075;
+    margin-right: 0.5em;
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+    content: "";
+}
+// Removing outline and shadow on buttons
+.btn,
+.btn-dark,
+.btn-close {
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &:hover {
+        outline: none;
+        box-shadow: none;
+    }
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
+    &:active:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+// Navbar : Add flight Button on Admin platform
+.navbar {
+    .btn-outline-primary {
+        color: $airblue !important;
+        border-color: $airblue !important;
+    }
+    .btn-outline-primary:hover {
+        color: $white !important;
+        background-color: $airblue !important;
+    }
+}
+// Hamburger menu modification
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+.navbar-toggler-icon:active:focus {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(44, 192, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+.navbar-toggler {
+    border-color: $white !important;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &:hover {
+        outline: none;
+        box-shadow: none;
+    }
+    &:active {
+        outline: none;
+        box-shadow: none;
+        border-color: $airblue !important;
+    }
+    &:active:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: $airblue !important;
+    }
+}
+// Navbar items spacing
+.navbar-nav {
+    li {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+.bg-light {
+    background-color: $airgray !important;
+}
+.nav-link {
+    color: $white !important;
+}
+.nav-link:hover {
+    color: $airblue !important;
+}
+.active {
+    color: $airblue !important;
+}
+// Mobile dropdown menu
+.dropdown-menu {
+    background-color: $airgray;
+    .dropdown-item {
+        color: $white;
+        padding: 0.25rem 0.4rem;
+    }
+    .dropdown-item:hover {
+        color: $airblue;
+        background-color: $airgray;
+    }
+}
+// Table Buttons modification
+table {
+    border-radius: 3px;
+    .btn-outline-dark {
+        color: $airgray;
+    }
+    .btn-outline-dark:hover {
+        color: $airblue;
+        background-color: $airgray;
+    }
+    .btn-outline-success {
+        color: $airgray !important;
+        border-color: $airgray !important;
+    }
+    .btn-outline-success:hover {
+        color: $airgreen !important;
+        background-color: $airgray !important;
+    }
+    .btn-outline-primary {
+        color: $airgray !important;
+        border-color: $airgray !important;
+    }
+    .btn-outline-primary:hover {
+        color: $airblue !important;
+        background-color: $airgray !important;
+    }
+    .btn-outline-danger {
+        color: $airgray !important;
+        border-color: $airgray !important;
+    }
+    .btn-outline-danger:hover {
+        color: $airred !important;
+        background-color: $airgray !important;
+    }
+}
+ul {
+    list-style-type: none;
+}
+// Table Row Colors
+.table-light {
+    --bs-table-bg: #f8f9fa;
+    --bs-table-striped-bg: $airbadbe9 !important;
+    --bs-table-striped-color: #0b232d !important;
+    --bs-table-active-bg: #dfe0e1;
+    --bs-table-active-color: #0b232d !important;
+    --bs-table-hover-bg: #5496b3 !important;
+    --bs-table-hover-color: #f8f9fa !important;
+    color: #0b232d !important;
+    // border-color: #0b232d81 !important;
+    //border: 1px solid #0b232d !important;
+    //border-radius: 10px !important;
+}
+.table-responsive {
+    border-radius: 6px !important;
+    //overflow: hidden !important;
+}
+// Hiding Ids
+.flight-id,
+.reserv-id,
+.user-id {
+    display: none;
+}
+// Alert message bg color
+.alert-warning {
+    background-color: #cab341 !important;
+    border-color: #cab341 !important;
+}
+// Modal modification & buttons
+.modal {
+    .modal-content {
+        background-color: $airgray !important;
+        color: $white !important;
+        .btn-outline-danger {
+            color: $airred !important;
+            border-color: $airred !important;
+        }
+        .btn-outline-danger:hover {
+            color: $white !important;
+            background-color: $airred !important;
+        }
+    }
+    .modal-footer {
+        .btn-outline-primary {
+            color: $airblue !important;
+            border-color: $airblue !important;
+        }
+        .btn-outline-primary:hover {
+            color: $white !important;
+            background-color: $airblue !important;
+        }
+        .btn-outline-success {
+            color: $airgreen !important;
+            border-color: $airgreen !important;
+        }
+        .btn-outline-success:hover {
+            color: $white !important;
+            background-color: $airgreen !important;
+        }
+        .btn-outline-secondary {
+            color: $airbadbe9 !important;
+            border-color: $airbadbe9 !important;
+        }
+        .btn-outline-secondary:hover {
+            color: $airgray !important;
+            background-color: $airbadbe9 !important;
+        }
+        .btn-outline-danger {
+            color: $airred !important;
+            border-color: $airred !important;
+        }
+        .btn-outline-danger:hover {
+            color: $white !important;
+            background-color: $airred !important;
+        }
+    }
+}
+// Footer styling
+footer {
+    color: $white !important;
+    background-color: $airgray !important;
+    p {
+        margin-bottom: 0;
+        padding: 1.125em;
+    }
+}
+// Hide inputs in various forms
 #flight-return,
 #edit-flight-return,
 #hidden_departure_time,
 #hidden_departure_time_2,
 #hidden_return_time {
-  display: none;
+    display: none;
 }
-
+// Searchbar
 .search_container {
     display: grid;
-    grid-template-columns:2.5rem 1fr;
-    width:100%;
-    border: 1px solid #ccc;
+    grid-template-columns: 2.5rem 1fr;
+    border: 1px solid #0b232d20;
     border-radius: 5px;
     overflow: hidden;
-  }
-  
-  .search_container:focus-within i {
+    background-color: $airbadbe9 !important;
+    input {
+        background-color: $airbadbe9 !important;
+        padding: 0.75rem;
+    }
+}
+.search_container:focus-within i {
     display: none;
-  }
-  
-  .search_container:focus-within .search{
-    grid-column:1/4;
-  }
-  
-  .search_container:focus-within .search::placeholder {
-    color:transparent;
-  }
-  
-  .search_icon {
+}
+.search_container:focus-within .search {
+    grid-column: 1/4;
+}
+.search_container:focus-within .search::placeholder {
+    color: transparent;
+}
+.search_icon {
     padding: 1rem;
-    grid-row:1;
-    grid-column:1/2;
-    z-index:2
-  }
-  
-  .search {
+    grid-row: 1;
+    grid-column: 1/2;
+    z-index: 2;
+}
+.search {
     border: 0;
     padding: 0.5rem;
-    grid-column:2/4;
-    grid-row:1;
-    outline:none;
-  }
+    grid-column: 2/4;
+    grid-row: 1;
+    outline: none;
+}

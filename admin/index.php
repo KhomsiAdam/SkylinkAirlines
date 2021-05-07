@@ -19,9 +19,9 @@ require '../app/core/adminautoloader.php';
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-md-8">
-                        <form class="bg-white rounded shadow-5-strong p-5" action="login" method="POST" id="admin-login-form">
+                        <form class="bg-white rounded shadow-5-strong pt-4 pb-2 px-5" action="login" method="POST" id="admin-login-form">
                             <div class="text-center">
-                                <img src="../icons/form-logo.png" alt="" width="75%" height="75%" class="rounded">
+                                <img src="../icons/logo_vertical.png" alt="Skylink Airlines vertical logo above text" width="50%" height="50%" class="rounded">
                             </div>
                             <div class="form-group form-outline mb-4">
                                 <label for="username" class="form-label">Username</label>
@@ -41,7 +41,7 @@ require '../app/core/adminautoloader.php';
                                 </p>
                             </div>
 
-                            <button type="submit" id="login-submit" class="btn col-12 btn-primary">Sign In</button>
+                            <button type="submit" id="login-submit" class="btn col-12 btn-dark mb-3">Sign In</button>
                         </form>
                     </div>
                 </div>

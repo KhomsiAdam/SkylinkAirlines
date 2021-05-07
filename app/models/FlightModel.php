@@ -77,4 +77,3 @@ class FlightModel extends Dbh {
         $stmt->execute();
     }
 }
-?>

@@ -18,9 +18,9 @@ require 'app/core/autoloader.php';
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-md-8">
-                        <form class="bg-white rounded shadow-5-strong p-5" action="login" method="POST" id="login-form">
-                            <div class="text-center">
-                                <img src="icons/form-logo.png" alt="" width="75%" height="75%" class="rounded">
+                        <form class="bg-white rounded shadow-5-strong pt-4 pb-2 px-5" action="login" method="POST" id="login-form">
+                            <div class="text-center mb-3">
+                                <img src="icons/logo_vertical.png" alt="Skylink Airlines vertical logo above text" width="50%" height="50%" class="rounded">
                             </div>
                             <div class="form-group form-outline mb-4">
                                 <label for="email" class="form-label">Email</label>
@@ -38,9 +38,9 @@ require 'app/core/autoloader.php';
                                     } ?>
                                 </p>
                             </div>
-                            <button type="submit" id="login-submit" class="btn col-12 btn-primary mb-3">Sign In</button>
+                            <button type="submit" id="login-submit" class="btn col-12 btn-dark mb-3">Sign In</button>
                             <div class="col text-center">
-                                <a href="signup">Sign Up</a>
+                                <p>Not having an account ? <a href="signup">Sign Up</a></p>
                             </div>
                         </form>
                     </div>

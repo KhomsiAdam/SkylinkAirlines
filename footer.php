@@ -1,5 +1,5 @@
-<footer>
-    <div class="text-center p-3">
+<footer class="fixed-bottom">
+    <p class="text-center">
         © 2021 Copyright Skylink Airlines
-    </div>
+    </p>
 </footer>

@@ -18,4 +18,3 @@ $sql = "INSERT INTO admins (admin_name, admin_password)
 VALUES ('$admin_name', '$admin_password')";
 $conn->query($sql); */
 header("Location: index");
-?>

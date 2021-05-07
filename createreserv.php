@@ -10,4 +10,3 @@ if ($flight_seats != 0) {
     $_SESSION['reserv-error'] = 'This flight has no available seats';
     header("Location: flights");
 }
-?>

@@ -31,4 +31,3 @@ class AdminModel extends Dbh {
         }
     }
 }
-?>

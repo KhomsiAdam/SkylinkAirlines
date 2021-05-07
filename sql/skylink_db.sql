@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2021 at 12:17 AM
+-- Generation Time: May 07, 2021 at 02:30 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -59,6 +59,13 @@ CREATE TABLE `flights` (
   `flight_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `flights`
+--
+
+INSERT INTO `flights` (`flight_id`, `flight_type`, `flight_origin`, `flight_destination`, `flight_departure_time`, `flight_return_time`, `flight_price`, `flight_seats`, `flight_created_at`, `flight_updated_at`) VALUES
+(7, 'Round Trip', 'HND - Tokyo Intl - Tokyo', 'KIX - Kansai - Osaka', '2021-05-07 12:11:00', '2021-05-14 12:11:00', 100, 0, '2021-05-07 00:11:16', '2021-05-07 00:28:21');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +81,16 @@ CREATE TABLE `passengers` (
   `passengers_country` varchar(128) NOT NULL,
   `passengers_created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `passengers`
+--
+
+INSERT INTO `passengers` (`passengers_id`, `reserv_id`, `passengers_firstname`, `passengers_lastname`, `passengers_dateofbirth`, `passengers_country`, `passengers_created_at`) VALUES
+(8, 9, 'Alex', 'Legends', '1995-01-01', 'Mexico', '2021-05-07 00:15:20'),
+(9, 9, 'Johnny', 'Moe', '1993-03-03', 'China', '2021-05-07 00:15:20'),
+(10, 10, 'Alex', 'Legends', '1995-01-01', 'Mexico', '2021-05-07 00:15:21'),
+(11, 10, 'Johnny', 'Moe', '1993-03-03', 'China', '2021-05-07 00:15:21');
 
 -- --------------------------------------------------------
 
@@ -95,6 +112,14 @@ CREATE TABLE `reservations` (
   `reserv_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`reserv_id`, `users_id`, `flight_id`, `reserv_type`, `reserv_origin`, `reserv_destination`, `reserv_departure_time`, `reserv_status`, `reserv_seats`, `reserv_created_at`, `reserv_updated_at`) VALUES
+(9, 3, 7, 'Round Trip', 'HND - Tokyo Intl - Tokyo', 'KIX - Kansai - Osaka', '2021-05-07 12:11:00', 'Cancelled', 0, '2021-05-07 00:14:38', '2021-05-07 00:15:28'),
+(10, 3, 7, 'Round Trip', 'KIX - Kansai - Osaka', 'HND - Tokyo Intl - Tokyo', '2021-05-14 12:11:00', 'Cancelled', 0, '2021-05-07 00:14:38', '2021-05-07 00:15:28');
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +136,13 @@ CREATE TABLE `users` (
   `users_country` varchar(128) NOT NULL,
   `users_created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`users_id`, `users_firstname`, `users_lastname`, `users_email`, `users_password`, `users_dateofbirth`, `users_country`, `users_created_at`) VALUES
+(3, 'John', 'Doe', 'johndoe@email.com', '$2y$10$GkxraOxMsoK0rG8nXzwre.D6bIIRFmy7hjs1IOFK8jr0qTVaLlyVu', '1999-01-01', 'USA', '2021-05-07 00:14:24');
 
 --
 -- Indexes for dumped tables
@@ -164,25 +196,25 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `flight_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `flight_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `passengers`
 --
 ALTER TABLE `passengers`
-  MODIFY `passengers_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `passengers_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reserv_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reserv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -192,14 +224,14 @@ ALTER TABLE `users`
 -- Constraints for table `passengers`
 --
 ALTER TABLE `passengers`
-  ADD CONSTRAINT `passengers_ibfk_1` FOREIGN KEY (`reserv_id`) REFERENCES `reservations` (`reserv_id`);
+  ADD CONSTRAINT `passengers_ibfk_1` FOREIGN KEY (`reserv_id`) REFERENCES `reservations` (`reserv_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`users_id`),
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`flight_id`);
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`users_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`flight_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

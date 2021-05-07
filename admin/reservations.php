@@ -10,7 +10,6 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_name'])) {
         include "admin_head.php";
         ?>
         <meta name="description" content="List of all reservations done by users">
-        <script src="../js/admin-reserv.js" defer></script>
     </head>
 
     <body>
