@@ -1,10 +1,17 @@
 <?php
 // Database Handler
 class Dbh {
-    private $host = "localhost";
-    private $user = "root";
-    private $pwd = "";
-    private $db_name = "skylink_db";
+    // Local Database Connection
+    // private $host = "localhost";
+    // private $user = "root";
+    // private $pwd = "";
+    // private $db_name = "skylink_db";
+
+    // Remote Database Connection
+    private $host = "remotemysql.com";
+    private $user = "JrbJm0yZbc";
+    private $pwd = "uAFnwomLY0";
+    private $db_name = "JrbJm0yZbc";
 
     protected function connect() {
         // Data Source Name
