@@ -11560,6 +11560,7 @@ body {
   height: 99vh;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 #user-error h1, #user-error .h1,
@@ -11616,6 +11617,7 @@ body {
   height: 99vh;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 #user-home h1, #user-home .h1,
