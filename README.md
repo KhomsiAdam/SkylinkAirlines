@@ -32,6 +32,8 @@ Using JS to make the form dynamic.
 
 http://skylinkairlines.herokuapp.com/
 
+*credentials to connect to the admin platform : username = admin ; password = admin123***
+
 # Diagrammes UML / UML Diagrams :
 
 # Use Case :
